@@ -1,0 +1,16 @@
+# when issue related action happens "created"
+# output details
+
+name: Deploy Project
+on: issues
+jobs: 
+    open:
+        runs-on: ubuntu-latest
+        steps:
+            - name: open issue
+              run: echo "issue opened"
+    info:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Output GitHub context
+            run: echo "${{ toJSON(github) }}"
